@@ -43,6 +43,104 @@
       --nav-height: 72px;
     }
 
+    /* ===== Site Footer ===== */
+    .site-footer {
+      background: var(--brand-blue);
+      color: #cbd5e1;
+      padding: 4rem 0 2rem;
+    }
+    .site-footer .section-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-weight: 800;
+      color: #fff;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .footer-brand h3 {
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 420px;
+    }
+    .footer-contact h4 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .footer-contact p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .footer-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 2rem;
+    }
+    .footer-bottom .copyright,
+    .footer-bottom .beian {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .footer-bottom .beian {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-bottom .beian:hover {
+      color: #cbd5e1;
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -3681,6 +3779,29 @@
     </section>
 
   </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="section-shell">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>KN</span>
+          </div>
+          <h3>滨州康乃尔新材料科技有限公司</h3>
+          <p>京博集团旗下医用卫生与功能性新材料产业承接平台</p>
+        </div>
+        <div class="footer-contact">
+          <h4>联系合作</h4>
+          <p>期待与您探讨材料开发、产品定制与稳定供应方案。</p>
+          <a href="mailto:contact@cornellnonwoven.com" class="footer-link">contact@cornellnonwoven.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 滨州康乃尔新材料科技有限公司</p>
+        <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="beian">鲁ICP备2026030070号</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const body = document.body;
