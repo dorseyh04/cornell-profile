@@ -261,6 +261,19 @@
       margin-bottom: 2.6rem;
     }
 
+    .section-visual {
+      margin-top: 2.5rem;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-visual img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+
     .section-kicker {
       margin: 0 0 0.55rem;
       color: var(--accent-cyan);
@@ -534,9 +547,391 @@
       backdrop-filter: blur(12px);
     }
 
+    /* §5 ─ 企业文化 Glass Cards */
+    .creed--section {
+      background: linear-gradient(135deg, #1B3A5B, #2E5A8A);
+      color: #fff;
+    }
+
+    .creed--section .section-kicker {
+      color: rgba(255, 255, 255, 0.55) !important;
+    }
+
+    .creed--section h2 {
+      color: #fff !important;
+    }
+
+    .creed--section .lead {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    .creed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+    }
+
+    .creed-card {
+      position: relative;
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+      overflow: hidden;
+    }
+
+    .creed-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .creed-card__icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .creed-card__label {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .creed-card__body {
+      font-size: 1.22rem;
+      font-weight: 800;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .creed-card--values .creed-card__body {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    .creed-subtitle {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
     .text-block {
       display: grid;
       gap: 1.05rem;
+    }
+
+    /* ===== Layer 1: Positioning Statement ===== */
+    .positioning-statement {
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+      border-left: 4px solid #00A6B6;
+    }
+
+    .positioning-statement .quote {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+    }
+
+    .positioning-statement .quote .bold {
+      font-weight: 700;
+    }
+
+    .positioning-statement .formula {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== Layer 2: Relationship Pyramid (Upgraded) ===== */
+    .relationship-upgraded {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+      margin-bottom: 2.5rem;
+    }
+
+    .relation-node-upgraded {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .relation-node-upgraded:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--brand-blue);
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .node-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      margin: 0 auto 0.8rem;
+      border-radius: 50%;
+      background: var(--brand-blue);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .node-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .node-subtitle {
+      font-size: 0.85rem;
+      color: var(--brand-blue);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .node-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ===== Layer 3: Positioning Six Elements ===== */
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .positioning-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .positioning-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .positioning-card .capability-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      background: var(--brand-blue-light);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .positioning-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    .positioning-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ===== Layer 4: Dual Path (Medical + Hygiene) ===== */
+    .layer-subtitle {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin: 2rem 0 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid #00A6B6;
+    }
+
+    .dual-path {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .path-card {
+      padding: 1.8rem;
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .path-card.medical {
+      border-top: 4px solid #1B3A5B;
+    }
+
+    .path-card.hygiene {
+      border-top: 4px solid #00A6B6;
+    }
+
+    .path-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .path-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+      background: var(--brand-blue-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .path-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      display: grid;
+      gap: 0.8rem;
+      counter-reset: path-step;
+    }
+
+    .path-steps li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      padding-left: 2rem;
+      position: relative;
+      counter-increment: path-step;
+    }
+
+    .path-steps li::before {
+      position: absolute;
+      left: 0;
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .path-steps li:nth-child(1)::before { content: '①'; }
+    .path-steps li:nth-child(2)::before { content: '②'; }
+    .path-steps li:nth-child(3)::before { content: '③'; }
+
+    .path-target {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 0.8rem;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      line-height: 1.5;
+    }
+
+    .path-target strong {
+      color: var(--brand-blue);
+    }
+
+    /* ===== Layer 5: Internationalization Timeline ===== */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .timeline-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .timeline-card:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--brand-blue);
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .timeline-phase {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--brand-blue);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-card .highlight {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-top: auto;
+    }
+
+    .timeline-card .highlight-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
     }
 
     .relationship {
@@ -723,6 +1118,381 @@
       aspect-ratio: 4 / 3;
     }
 
+    /* ===== AquaChill §16 ===== */
+
+    /* Block 1: 结构图 + 双面凉感数据 */
+    .cooling-hero {
+      margin-bottom: 0.5rem;
+    }
+
+    .cooling-hero-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .cooling-hero-img img {
+      width: 100%;
+      aspect-ratio: 21 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cooling-data-split {
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .cooling-face-data {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .cooling-face-data--green {
+      background: #E6F7F8;
+      border: 1px solid rgba(0, 166, 182, 0.25);
+    }
+
+    .cooling-face-data--white {
+      background: #FAF8F5;
+      border: 1px solid rgba(0, 166, 182, 0.18);
+    }
+
+    .cooling-face-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .cooling-face-qmax {
+      font-family: var(--font-number);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--brand-blue);
+      line-height: 1.1;
+    }
+
+    .cooling-badge {
+      font-size: 1.6rem;
+    }
+
+    .cooling-face-sub {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .cooling-face-note {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+    }
+
+    .cooling-divider {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    /* Block 2: 凉感对比 */
+    .cooling-contrast {
+      margin-bottom: 3rem;
+    }
+
+    .cooling-contrast h3 {
+      margin-bottom: 1.2rem;
+    }
+
+    .contrast-grid {
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contrast-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 2px solid;
+    }
+
+    .contrast-card--bad {
+      background: rgba(220, 50, 50, 0.05);
+      border-color: rgba(220, 50, 50, 0.25);
+    }
+
+    .contrast-card--bad .contrast-card__title {
+      color: #C0392B;
+    }
+
+    .contrast-card--good {
+      background: rgba(0, 166, 182, 0.06);
+      border-color: rgba(0, 166, 182, 0.3);
+    }
+
+    .contrast-card--good .contrast-card__title {
+      color: var(--accent-cyan);
+    }
+
+    .contrast-card__title {
+      margin: 0 0 0.6rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .contrast-card p {
+      margin: 0 0 0.8rem;
+      line-height: 1.6;
+    }
+
+    .contrast-card__foot {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* 凉感机制流程 */
+    .cooling-mechanism {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 1.8rem 0 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .mech-node {
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      background: #EBF2F8;
+      color: var(--brand-blue);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .mech-node--active {
+      background: var(--accent-cyan);
+      color: #fff;
+    }
+
+    .mech-arrow {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .cooling-mechanism__caption {
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    .cooling-mechanism__cert {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Block 3: Qmax 对标条形图 */
+    .cooling-benchmark {
+      margin-bottom: 3rem;
+    }
+
+    .cooling-benchmark h3 {
+      margin-bottom: 1.2rem;
+    }
+
+    .qmax-bars {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .qmax-bar__row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.45rem 0;
+      position: relative;
+    }
+
+    .qmax-bar__row--aq {
+      padding: 0.6rem 0;
+    }
+
+    .qmax-bar__label {
+      width: 140px;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    .qmax-bar__row--aq .qmax-bar__label {
+      color: var(--brand-blue);
+    }
+
+    .qmax-bar__track {
+      flex: 1;
+      height: 22px;
+      background: #EBF2F8;
+      border-radius: 11px;
+      overflow: hidden;
+    }
+
+    .qmax-bar__fill {
+      display: block;
+      height: 100%;
+      border-radius: 11px;
+      background: #CBD5E1;
+      transition: width 0.6s ease;
+    }
+
+    .qmax-bar__fill--t1 {
+      background: #CBD5E1;
+    }
+
+    .qmax-bar__fill--t2 {
+      background: #94A3B8;
+    }
+
+    .qmax-bar__fill--t3 {
+      background: #64748B;
+    }
+
+    .qmax-bar__fill--t4 {
+      background: #5BC0BE;
+    }
+
+    .qmax-bar__fill--aq {
+      background: linear-gradient(90deg, var(--accent-cyan), #5BC0BE);
+      box-shadow: 0 0 8px rgba(0, 166, 182, 0.35);
+    }
+
+    .qmax-bar__fill--aq2 {
+      background: linear-gradient(90deg, #5BC0BE, var(--accent-cyan));
+    }
+
+    .qmax-bar__val {
+      width: 50px;
+      flex-shrink: 0;
+      font-family: var(--font-number);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    .qmax-bar__val--aq {
+      color: var(--brand-blue);
+      font-size: 1rem;
+    }
+
+    .qmax-bar__tag {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      white-space: nowrap;
+    }
+
+    .qmax-bars__foot {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    /* Block 4: 四大支柱 */
+    .cooling-pillars {
+      margin-bottom: 2rem;
+    }
+
+    .cooling-pillars h3 {
+      margin-bottom: 1.2rem;
+    }
+
+    .aq-pillar-grid {
+      gap: 1rem;
+    }
+
+    .aq-pillar-card {
+      border-top: 3px solid var(--accent-cyan);
+    }
+
+    .aq-pillar__num {
+      display: block;
+      font-family: var(--font-number);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .aq-pillar-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+    }
+
+    .aq-pillar-card p {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    /* 场景画廊 */
+    .aquachill-scenes {
+      margin-top: 2.5rem;
+    }
+
+    .aquachill-scenes .scene-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .aquachill-scenes .scene-gallery img {
+      aspect-ratio: 3 / 2;
+    }
+
+    .scene-gallery__caption {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    /* §8: 应用场景画廊 — 每行 2 张，共 3 行 */
+    #applications .scene-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    #applications .scene-gallery .scene-item img {
+      aspect-ratio: 5 / 3;
+    }
+
+    #applications .scene-gallery .scene-label {
+      font-size: 0.72rem;
+      padding: 0.35rem 0.6rem;
+    }
+
     .scene-gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -801,41 +1571,98 @@
       font-weight: 700;
     }
 
-    .parameter-cloud {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 0.85rem;
+    /* §14 ─ Customization Dimension Cards */
+    .custom-dimensions {
+      margin-bottom: 2.8rem;
     }
 
-    .parameter-cloud span {
-      display: grid;
-      place-items: center;
-      min-height: 76px;
-      padding: 0.8rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(46, 90, 138, 0.2);
-      background: #fff;
+    .custom-card {
+      min-height: 180px;
+    }
+
+    .custom-card__title {
+      margin: 0 0 1rem;
+      font-size: var(--fs-h3);
+      font-weight: 800;
       color: var(--brand-blue);
-      text-align: center;
-      font-weight: 800;
-      box-shadow: var(--shadow-sm);
     }
 
-    .series-row {
+    .custom-tags {
       display: flex;
-      gap: 0.8rem;
       flex-wrap: wrap;
-      margin-top: 1.2rem;
+      gap: 0.5rem;
     }
 
-    .series-row span {
-      padding: 0.7rem 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--brand-blue);
-      color: #fff;
-      font-family: var(--font-number);
+    .custom-tags span {
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      background: var(--brand-blue-50);
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    /* §14 ─ Platform Cards */
+    .custom-platforms {
+      margin-bottom: 2.6rem;
+    }
+
+    .platforms-title {
+      margin: 0 0 0.45rem;
+      font-size: var(--fs-h2);
+      font-weight: 850;
+      color: var(--brand-blue);
+    }
+
+    .platforms-subtitle {
+      margin: 0 0 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .platform-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: var(--fs-h3);
       font-weight: 800;
+      color: var(--brand-blue);
+    }
+
+    .platform-role {
+      margin: 0 0 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .platform-details {
+      margin: 0;
+      padding: 0 0 0 1.1rem;
+      list-style: disc;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .platform-details li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    /* §14 ─ Bottom CTA */
+    .custom-cta {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .custom-cta a {
+      color: var(--accent-cyan);
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    .custom-cta a:hover {
+      color: var(--brand-blue-light);
     }
 
     .product-logo {
@@ -855,36 +1682,6 @@
 
     .side-card {
       border-top: 4px solid var(--brand-blue-light);
-    }
-
-    .aqua-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.85rem;
-      margin: 1.4rem 0;
-    }
-
-    .metric {
-      padding: 1rem;
-      border: 1px solid rgba(0, 166, 182, 0.22);
-      border-radius: var(--radius-sm);
-      background: rgba(0, 166, 182, 0.06);
-      min-height: 105px;
-    }
-
-    .metric strong {
-      display: block;
-      font-family: var(--font-number);
-      color: var(--brand-blue);
-      font-size: 1.45rem;
-      line-height: 1.15;
-      margin-bottom: 0.35rem;
-    }
-
-    .metric span {
-      color: var(--text-secondary);
-      font-size: var(--fs-small);
-      font-weight: 700;
     }
 
     .tech-specs {
@@ -1091,8 +1888,8 @@
 
     .supply-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
     }
 
     .supply-grid .card {
@@ -1100,91 +1897,151 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
       background: var(--surface);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .supply-grid .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     }
 
     .supply-grid .card img {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 2;
       object-fit: cover;
       display: block;
       transition: transform 0.4s ease;
     }
 
     .supply-grid .card:hover img {
-      transform: scale(1.06);
+      transform: scale(1.04);
     }
 
     .supply-grid .card .card-label {
-      padding: 0.85rem 1.1rem;
+      padding: 0.65rem 0.9rem;
       font-weight: 700;
       color: #f8fafc;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       letter-spacing: 0.02em;
       background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
       border-top: 2px solid var(--accent);
     }
 
     .supply-grid .card .card-desc {
-      padding: 0.75rem 1.1rem 1rem;
-      font-size: 0.85rem;
+      padding: 0.55rem 0.9rem 0.8rem;
+      font-size: 0.8rem;
       color: #cbd5e1;
-      line-height: 1.5;
+      line-height: 1.4;
       margin: 0;
       background: var(--surface);
     }
 
-    .contact-panel {
+    .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.58fr);
-      gap: 2rem;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
-    .contact-card {
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
       padding: 1.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       background: #fff;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
     }
 
-    .contact-card h3 {
-      margin-bottom: 1rem;
+    .contact-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
     }
 
-    .contact-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .contact-list li {
-      display: grid;
-      grid-template-columns: 5.2rem 1fr;
-      gap: 0.7rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    .contact-list li:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .contact-list strong {
+    .contact-icon {
+      flex-shrink: 0;
+      width: 2.8rem;
+      height: 2.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      background: var(--brand-blue-light);
       color: var(--brand-blue);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .contact-detail .label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+
+    .contact-detail .value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+
+    .contact-detail a {
+      color: var(--brand-blue);
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-cta {
+      margin-top: 2.5rem;
+      text-align: center;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--brand-blue) 0%, #1a56db 100%);
+      color: #fff;
+    }
+
+    .contact-cta h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .contact-cta p {
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-cta .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .contact-cta .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     /* ===== Scroll Progress Bar ===== */
@@ -1367,7 +2224,7 @@
       }
 
       .grid-4,
-      .aqua-metrics {
+      .supply-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1383,6 +2240,11 @@
         --fs-h2: 1.55rem;
         --fs-stat: 2.4rem;
         --nav-height: 66px;
+      }
+
+      .aquachill-scenes .scene-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
       }
 
       .nav-links {
@@ -1430,24 +2292,35 @@
       .grid-4,
       .feature-strip,
       .relationship,
+      .relationship-upgraded,
+      .positioning-grid,
+      .dual-path,
+      .timeline,
       .tech-specs,
       .process,
-      .supply-grid {
+      .supply-grid,
+      .creed-grid {
         grid-template-columns: 1fr;
       }
 
-      .relation-node:not(:last-child)::after {
+      .relation-node:not(:last-child)::after,
+      .relation-node-upgraded:not(:last-child)::after,
+      .timeline-card:not(:last-child)::after {
         display: none;
+      }
+
+      .positioning-statement .quote {
+        font-size: 1.4rem;
+      }
+
+      .layer-subtitle {
+        font-size: 1.1rem;
       }
 
       .plain-table {
         display: block;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-      }
-
-      .parameter-cloud {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1483,7 +2356,6 @@
       .attribute-grid,
       .app-list,
       .media-stack,
-      .aqua-metrics,
       .scene-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1580,7 +2452,6 @@
         <a href="#group" data-nav="group">集团背书</a>
         <a href="#products" data-nav="products">产品矩阵</a>
         <a href="#quality" data-nav="quality">质量保障</a>
-        <a href="#contact" data-nav="contact">联系合作</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-controls="navLinks" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -1596,10 +2467,6 @@
             <h1>滨州康乃尔新材料科技有限公司</h1>
             <p class="hero-subtitle">京博集团旗下医用卫生与功能性新材料产业承接平台</p>
             <p class="hero-position">围绕贴身医卫、生活功能材料、过滤材料与工业吸附场景，为国内 B2B 客户提供材料开发、质量控制与稳定供应能力。</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#products">了解产品矩阵 →</a>
-              <a class="button button-secondary" href="#contact">联系合作</a>
-            </div>
           </div>
         </div>
       </div>
@@ -1616,12 +2483,12 @@
         </div>
         <div class="grid grid-3">
           <article class="card stat-card" data-animate>
-            <div class="stat-value"><span class="count" data-count="1030">0</span><small>亿元</small></div>
-            <p class="stat-label">2024 年销售额</p>
+            <div class="stat-value"><span class="count" data-count="1108">0</span><small>亿元</small></div>
+            <p class="stat-label">2025 年营收</p>
           </article>
           <article class="card stat-card" data-animate>
-            <div class="stat-value">近 <span class="count" data-count="12000">0</span><small>人</small></div>
-            <p class="stat-label">员工规模</p>
+            <div class="stat-value"><span class="count" data-count="11000">0</span>+<small>人</small></div>
+            <p class="stat-label">员工人数</p>
           </article>
           <article class="card stat-card" data-animate>
             <div class="stat-value"><span class="count" data-count="50">0</span>+<small>国家</small></div>
@@ -1632,13 +2499,16 @@
             <p class="stat-label">大型生产基地</p>
           </article>
           <article class="card stat-card" data-animate>
-            <div class="stat-value"><span class="count" data-count="8">0</span><small>个</small></div>
-            <p class="stat-label">研发基地</p>
+            <div class="stat-value"><span class="count" data-count="2000">0</span>+<small>件</small></div>
+            <p class="stat-label">持有授权专利</p>
           </article>
           <article class="card stat-card" data-animate>
-            <div class="stat-value"><span class="count" data-count="275">0</span><small>位</small></div>
+            <div class="stat-value">第 <span class="count" data-count="254">0</span><small>位</small></div>
             <p class="stat-label">中国企业 500 强</p>
           </article>
+        </div>
+        <div class="section-visual" data-animate>
+          <img src="assets/group-photo.jpg" alt="京博集团产业园区">
         </div>
       </div>
     </section>
@@ -1694,21 +2564,169 @@
           </div>
           <p class="lead">把集团新材料能力转化为医卫、清洁、过滤、吸附等场景的产品交付。</p>
         </div>
-        <div class="relationship" data-animate>
-          <div class="relation-node">京博集团</div>
-          <div class="relation-node">康乃尔新材料</div>
-          <div class="relation-node">客户应用场景</div>
-        </div>
-        <div class="split">
-          <div class="text-block" data-animate>
-            <p>康乃尔是京博集团旗下新材料方向核心子公司，集高性能非织造材料研发、智造、销售、服务于一体，聚焦医用卫生与功能性材料。</p>
-            <p>康乃尔的价值不是只生产某一种布，而是把集团新材料能力转化为医卫、清洁、过滤、吸附等场景的产品交付。</p>
+        
+        <!-- Layer 1: 定位宣言 -->
+        <div class="positioning-statement" data-animate>
+          <div class="positioning-text">
+            <div class="quote">
+              <span class="bold">康乃尔不是非织造布工厂——</span><br>
+              是京博新材料能力的场景化交付平台。
+            </div>
+            <div class="formula">康乃尔 = 京博平台原料 × 微纳纤维技术 × 场景化产品交付</div>
           </div>
-          <div class="image-frame" data-animate>
-            <img src="assets/company/plant-exterior.png" alt="康乃尔厂区外景">
-            <div class="image-caption">新材料产业承接平台</div>
+          <div class="positioning-visual">
+            <img src="assets/positioning-strategy.png" alt="材料科技转化为场景产品">
           </div>
         </div>
+        
+        <!-- Layer 2: 价值金字塔 -->
+        <div class="relationship-upgraded" data-animate>
+          <div class="relation-node-upgraded">
+            <span class="node-number">01</span>
+            <div class="node-title">京博集团</div>
+            <div class="node-subtitle">产业平台</div>
+            <div class="node-desc">中国500强；化工新材料全产业链；原料直供、研发协同、渠道共享</div>
+          </div>
+          <div class="relation-node-upgraded">
+            <span class="node-number">02</span>
+            <div class="node-title">康乃尔新材料</div>
+            <div class="node-subtitle">核心能力</div>
+            <div class="node-desc">微纳交替纤维熔喷技术；4项授权发明专利；29条产线柔性智造</div>
+          </div>
+          <div class="relation-node-upgraded">
+            <span class="node-number">03</span>
+            <div class="node-title">客户应用场景</div>
+            <div class="node-subtitle">最终交付</div>
+            <div class="node-desc">医用敷料/智能穿戴/卫材透气/生活擦拭/工业过滤/高温吸附</div>
+          </div>
+        </div>
+        
+        <!-- Layer 3: 定位六要素 -->
+        <div class="positioning-grid" data-animate>
+          <article class="positioning-card">
+            <span class="capability-index">01</span>
+            <h3>我是谁</h3>
+            <p>京博集团旗下新方向材料核心子公司，2023年成立，注册资本600万</p>
+          </article>
+          <article class="positioning-card">
+            <span class="capability-index">02</span>
+            <h3>我做什么</h3>
+            <p>高性能熔喷非织造材料：研发→智造→销售→服务一体化</p>
+          </article>
+          <article class="positioning-card">
+            <span class="capability-index">03</span>
+            <h3>我的不同</h3>
+            <p><strong>不卖布</strong>——卖的是"材料科技→场景产品"的转化能力。平台原料+专利技术+定制交付，三位一体</p>
+          </article>
+          <article class="positioning-card">
+            <span class="capability-index">04</span>
+            <h3>为谁服务</h3>
+            <p>医用敷料/卫材品牌商、智能穿戴/工业过滤制造商、高端擦拭ODM/OEM</p>
+          </article>
+          <article class="positioning-card">
+            <span class="capability-index">05</span>
+            <h3>为什么选我</h3>
+            <p>①京博原料直供（成本+质量）②微纳纤维独家工艺 ③29条产线柔性响应 ④从实验室到量产的"门径式"管理</p>
+          </article>
+          <article class="positioning-card">
+            <span class="capability-index">06</span>
+            <h3>我的愿景</h3>
+            <p>3年建成行业标杆产线，5年成为全球高性能非织造材料领先者</p>
+          </article>
+        </div>
+        
+        <!-- Layer 4: 医卫深耕路径 -->
+        <h3 class="layer-subtitle">深耕路径：医＋卫双轮驱动</h3>
+        <div class="dual-path" data-animate>
+          <div class="path-card medical">
+            <h3>医用材料</h3>
+            <span class="path-label">认证驱动 → 品牌溢价</span>
+            <ul class="path-steps">
+              <li>2026-2027：ISO 13485认证 + 海氏海诺/稳健/振德标杆突破</li>
+              <li>2027-2028：二类器械注册 + 参与行业标准 + 联合品牌开发</li>
+              <li>2028-2030：FDA 510(k) + CE MDR → 打造"Cornell Medical"子品牌</li>
+            </ul>
+            <div class="path-target">
+              <strong>目标场景：</strong>医用敷料基材、手术衣、传感器敷贴、弹性绷带
+            </div>
+          </div>
+          <div class="path-card hygiene">
+            <h3>卫生材料</h3>
+            <span class="path-label">熔喷差异化 → 大客户联合开发</span>
+            <ul class="path-steps">
+              <li>卫材透气膜：替代传统PE膜，透气性提升2-3倍 → 金佰利/恒安/可靠</li>
+              <li>厨房湿巾：自带吸油+物理摩擦功能 → 逸祥/昱森/珍爱</li>
+              <li>运动凉感：降温+抗菌熔喷功能材料 → 新锐品牌</li>
+            </ul>
+            <div class="path-target">
+              <strong>核心策略：</strong>不做"大路货"，只做需要熔喷差异化能力的中高端场景
+            </div>
+          </div>
+        </div>
+        
+        <!-- Layer 5: 国际化蓝图 -->
+        <h3 class="layer-subtitle">国际化蓝图：借船 → 扎根 → 全球布局</h3>
+        <div class="timeline" data-animate>
+          <article class="timeline-card">
+            <span class="timeline-phase">Phase 1：借船出海</span>
+            <h3>2026-2028</h3>
+            <p><strong>核心策略：</strong>跟随中国医疗/卫材品牌出海，做海外供应链伙伴</p>
+            <p><strong>目标市场：</strong>东南亚 · 日本</p>
+            <p><strong>关键行动：</strong>CE + ISO 13485认证；英文TDS体系；INDEX/ANEX展会；组建外贸团队</p>
+            <div class="highlight">10-15%</div>
+            <div class="highlight-label">海外营收目标</div>
+          </article>
+          <article class="timeline-card">
+            <span class="timeline-phase">Phase 2：区域深耕</span>
+            <h3>2028-2030</h3>
+            <p><strong>核心策略：</strong>在亚太核心市场建立本地化服务能力</p>
+            <p><strong>目标市场：</strong>东南亚 · 中东 · 南亚</p>
+            <p><strong>关键行动：</strong>新加坡/曼谷技术服务中心；FDA 510(k)；参加MEDICA/FIME</p>
+            <div class="highlight">25-30%</div>
+            <div class="highlight-label">海外营收目标</div>
+          </article>
+          <article class="timeline-card">
+            <span class="timeline-phase">Phase 3：全球布局</span>
+            <h3>2030-2035</h3>
+            <p><strong>核心策略：</strong>从产品出口升级为技术/产能双输出</p>
+            <p><strong>目标市场：</strong>欧洲 · 北美</p>
+            <p><strong>关键行动：</strong>海外合资/技术授权；考虑东南亚设厂；收购互补企业</p>
+            <div class="highlight">40%+</div>
+            <div class="highlight-label">海外营收目标</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section creed--section" id="creed" data-section data-group="group">
+      <div class="section-shell">
+        <div class="section-header" data-animate>
+          <div>
+            <p class="section-kicker">§5</p>
+            <h2>企业文化</h2>
+          </div>
+          <p class="lead">使命驱动，价值观落地</p>
+        </div>
+
+        <div class="creed-grid" data-animate>
+          <article class="creed-card">
+            <span class="creed-card__icon">🎯</span>
+            <span class="creed-card__label">使命</span>
+            <p class="creed-card__body">把新材料能力转化为场景化的产品交付</p>
+          </article>
+          <article class="creed-card">
+            <span class="creed-card__icon">🔭</span>
+            <span class="creed-card__label">愿景</span>
+            <p class="creed-card__body">成为全球高性能非织造材料的领先者</p>
+          </article>
+          <article class="creed-card creed-card--values">
+            <span class="creed-card__icon">⚖️</span>
+            <span class="creed-card__label">价值观</span>
+            <p class="creed-card__body">诚信 · 奉献 · 改善 · 利他</p>
+          </article>
+        </div>
+
+        <p class="creed-subtitle">根植于京博集团"仁孝利他"文化，以客户心为心</p>
       </div>
     </section>
 
@@ -1716,7 +2734,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§5</p>
+            <p class="section-kicker">§6</p>
             <h2>制造能力</h2>
           </div>
           <p class="lead">从材料制造、产品定制到质量控制与供应保障，面向 B2B 客户提供稳定交付能力。</p>
@@ -1756,7 +2774,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§6</p>
+            <p class="section-kicker">§7</p>
             <h2>产品矩阵</h2>
           </div>
           <p class="lead">这不是按内部工艺分类，而是按客户应用场景组织的产品体系。</p>
@@ -1808,7 +2826,7 @@
             </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <img class="product-img" src="assets/products/surgical-mask.jpg" alt="医用外科口罩" loading="lazy">
+            <img class="product-img" src="assets/products/surgical-mask.png" alt="医用外科口罩" loading="lazy">
             <div class="product-body">
               <span class="product-no">06</span>
               <h3>高透低阻口罩熔喷材料</h3>
@@ -1824,7 +2842,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§7</p>
+            <p class="section-kicker">§8</p>
             <h2>应用场景</h2>
           </div>
           <p class="lead">按客户场景理解产品，将需求快速映射到对应材料平台。</p>
@@ -1882,7 +2900,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§8</p>
+            <p class="section-kicker">§9</p>
             <h2>TPU 弹性透气材料</h2>
           </div>
           <p class="lead">面向贴身接触、长时间使用、柔软贴合、透气舒适的产品场景。</p>
@@ -1908,7 +2926,7 @@
           </div>
           <div class="tpu-scenes" data-animate>
             <div class="scene-item">
-              <img src="assets/products/tpu-scene-dressing.jpg" alt="医用敷料应用场景" loading="lazy">
+              <img src="assets/products/tpu-scene-dressing.png" alt="医用敷料应用场景" loading="lazy">
               <span class="scene-label">医疗敷料与创口护理</span>
             </div>
             <div class="scene-item">
@@ -1920,7 +2938,7 @@
               <span class="scene-label">弹性绷带与护具</span>
             </div>
             <div class="scene-item">
-              <img src="assets/products/tpu-scene-hygiene.jpg" alt="卫生用品弹性材料场景" loading="lazy">
+              <img src="assets/products/tpu-scene-hygiene.png" alt="弹性腰围应用场景" loading="lazy">
               <span class="scene-label">卫生用品弹性材料</span>
             </div>
           </div>
@@ -1932,14 +2950,14 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§9</p>
+            <p class="section-kicker">§10</p>
             <h2>医疗敷料方向</h2>
           </div>
           <p class="lead">只讲材料属性和基材适配，不作功效表述。</p>
         </div>
         <div class="split reverse">
           <div class="image-frame" data-animate>
-            <img src="assets/tpu/tpu-wound-dressing.jpg" alt="TPU 医疗敷料基材示意">
+            <img src="assets/products/tpu-wound-dressing.png" alt="TPU 医疗敷料基材示意">
             <div class="image-caption">医用敷料与创口贴基材方向</div>
           </div>
           <div class="text-block" data-animate>
@@ -1960,7 +2978,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§10</p>
+            <p class="section-kicker">§11</p>
             <h2>传感器敷贴方向</h2>
           </div>
           <p class="lead">贴身、长时间、功能器件固定场景，需要兼顾舒适、透气、贴合和复合加工稳定。</p>
@@ -1988,7 +3006,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§11</p>
+            <p class="section-kicker">§12</p>
             <h2>弹性绷带与护具方向</h2>
           </div>
           <p class="lead">既有弹性，又能在长时间佩戴中保持舒适和支撑。</p>
@@ -2017,7 +3035,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§12</p>
+            <p class="section-kicker">§13</p>
             <h2>卫生用品方向</h2>
           </div>
           <p class="lead">卫生用品客户关注的是舒适体验、材料稳定和批量供应。</p>
@@ -2046,36 +3064,74 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§13</p>
+            <p class="section-kicker">§14</p>
             <h2>可定制能力</h2>
           </div>
-          <p class="lead">不同终端产品对材料要求不同，康乃尔的价值在于配合客户做应用导向的材料开发。</p>
+          <p class="lead">不同终端产品对材料要求不同。康乃尔不是简单供货，而是围绕客户应用场景做联合开发——从参数调校到性能验证，交付的是可量产的材料方案。</p>
         </div>
-        <div class="split">
-          <div data-animate>
-            <div class="parameter-cloud">
-              <span>厚度</span>
-              <span>克重</span>
-              <span>幅宽<br>有效宽度 1.6m</span>
-              <span>弹性</span>
-              <span>透气性</span>
-              <span>手感</span>
-              <span>复合结构</span>
-              <span>颜色</span>
-              <span>卷径</span>
-              <span>包装方式</span>
-            </div>
-            <div class="series-row">
-              <span>KNE-TQM</span>
-              <span>KNE-AP</span>
-              <span>KNE-FM</span>
-            </div>
-          </div>
-          <div class="image-frame" data-animate>
-            <img src="assets/tpu/customization-flow.jpg" alt="TPU 定制开发流程图">
-            <div class="image-caption">定制能力流程素材</div>
+
+        <div class="custom-dimensions" data-animate>
+          <div class="grid grid-3">
+            <article class="card custom-card">
+              <h3 class="custom-card__title">📐 物理规格</h3>
+              <div class="custom-tags">
+                <span>厚度</span><span>克重</span><span>幅宽（有效 1.6m）</span><span>颜色</span><span>卷径</span>
+              </div>
+            </article>
+            <article class="card custom-card">
+              <h3 class="custom-card__title">⚡ 性能参数</h3>
+              <div class="custom-tags">
+                <span>弹性</span><span>透气性</span><span>手感</span>
+              </div>
+            </article>
+            <article class="card custom-card">
+              <h3 class="custom-card__title">🔧 结构定制</h3>
+              <div class="custom-tags">
+                <span>复合结构</span><span>包装方式</span>
+              </div>
+            </article>
           </div>
         </div>
+
+        <div class="custom-platforms" data-animate>
+          <h3 class="platforms-title">定制起点：三大基础平台</h3>
+          <p class="platforms-subtitle">客户不必从零开始——选择一个基础平台，我们在此基础上配合调整。</p>
+          <div class="grid grid-3">
+            <article class="card platform-card">
+              <h3>KNE-TQM</h3>
+              <p class="platform-role">医用胶带基材</p>
+              <ul class="platform-details">
+                <li>已通过生物相容性 5 项测试</li>
+                <li>克重 ~60 gsm</li>
+                <li>横向伸长率 &gt;350%</li>
+                <li>适配医疗胶带、膏药贴</li>
+              </ul>
+            </article>
+            <article class="card platform-card">
+              <h3>KNE-AP</h3>
+              <p class="platform-role">医用敷料基材</p>
+              <ul class="platform-details">
+                <li>肤色系列（AP70/AP80/AP90/AP100）</li>
+                <li>克重 ~70 gsm</li>
+                <li>高弹性 + 亲肤透气</li>
+                <li>适配伤口敷料、传感器敷贴</li>
+              </ul>
+            </article>
+            <article class="card platform-card">
+              <h3>KNE-FM</h3>
+              <p class="platform-role">生活功能材料</p>
+              <ul class="platform-details">
+                <li>克重 ~36 gsm</li>
+                <li>轻薄柔软</li>
+                <li>适配面膜基布、服装衬布、卫生用品面层</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <p class="custom-cta" data-animate>
+          选定平台 → 调整参数 → 打样验证 → 小批量试产 → 批量交付。完整开发流程详见 <a href="#development-flow">§22 联合开发流程</a>。
+        </p>
       </div>
     </section>
 
@@ -2083,7 +3139,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§14</p>
+            <p class="section-kicker">§15</p>
             <h2>MaxiScrub™ 清洁擦拭材料</h2>
           </div>
           <p class="lead">通过 AB 面异构结构实现物理摩擦去污和吸水收尾。</p>
@@ -2106,7 +3162,7 @@
             <p>应用场景：厨房擦拭湿巾、厨房洗碗抹布、小白鞋功能性湿巾。</p>
           </div>
           <div class="image-frame" data-animate>
-            <img src="assets/maxiscrub/maxiscrub-structure.jpg" alt="MaxiScrub 结构示意图">
+            <img src="assets/magicscrub.png" alt="MagiScrub 产品实拍">
             <div class="image-caption">AB 面异构双层结构</div>
           </div>
         </div>
@@ -2117,40 +3173,129 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§15</p>
-            <h2>AquaChill™ 凉感小毛巾材料</h2>
+            <p class="section-kicker">§16</p>
+            <h2>AquaChill™ 凉感复合无纺布</h2>
           </div>
-          <p class="lead">夏季降温的功能性小毛巾/湿巾基材，不是擦拭湿巾。</p>
+          <p class="lead">双面双凉感——熔喷面 Qmax 0.58 强冷 × 水刺面 0.41 柔凉。同一块布，两面可选。<strong>结构性凉感 ≠ 涂层凉感</strong>。</p>
         </div>
-        <div class="text-block" data-animate>
-          <p>材料结构：熔喷功能性纤维层 + 水刺粘胶天然植物纤维层，凉感来自结构与水分单向蒸发，不依赖涂层。</p>
-          <div class="aqua-metrics">
-            <div class="metric"><strong>12h+</strong><span>持续蒸发凉感</span></div>
-            <div class="metric"><strong>≥1000%</strong><span>吸水率</span></div>
-            <div class="metric"><strong>75-80cm</strong><span>幅宽</span></div>
-            <div class="metric"><strong>500kg</strong><span>单色 MOQ</span></div>
-            <div class="metric"><strong>7 天</strong><span>打样周期</span></div>
-            <div class="metric"><strong>75-120 gsm</strong><span>总克重</span></div>
-            <div class="metric"><strong>0.7-0.9mm</strong><span>厚度</span></div>
-            <div class="metric"><strong>42N / 66.9N</strong><span>横/纵断裂强力</span></div>
-            <div class="metric"><strong>七色系</strong><span>可选</span></div>
+
+        <!-- Block 1: 结构图 + 双面凉感数据 -->
+        <div class="cooling-hero" data-animate>
+          <div class="cooling-hero-img">
+            <img src="assets/aquachill/aquachill-structure.jpg" alt="AquaChill 双面结构示意图">
+          </div>
+          <div class="split cooling-data-split">
+            <div class="cooling-face-data cooling-face-data--green">
+              <span class="cooling-face-label">绿色熔喷面</span>
+              <strong class="cooling-face-qmax">Qmax 0.58 <span class="cooling-badge">🔥</span></strong>
+              <span class="cooling-face-sub">超强凉感 · 贴肤即冷</span>
+              <span class="cooling-face-note">国标凉感门槛的 3.9 倍</span>
+            </div>
+            <div class="cooling-face-data cooling-face-data--white">
+              <span class="cooling-face-label">白色水刺面</span>
+              <strong class="cooling-face-qmax">Qmax 0.41 <span class="cooling-badge">✦</span></strong>
+              <span class="cooling-face-sub">强凉感 · 柔软亲肤</span>
+              <span class="cooling-face-note">超出高端运动凉感面料天花板 45%</span>
+            </div>
           </div>
         </div>
-        <div class="split" style="margin-top:1.5rem;">
-          <div class="media-stack" data-animate>
-            <div class="image-frame"><img src="assets/aquachill/aquachill-structure.jpg" alt="AquaChill 结构示意图"></div>
-            <div class="image-frame"><img src="assets/aquachill/aquachill-spunlace.jpg" alt="AquaChill 水刺层材料原照"></div>
-          </div>
-          <div class="text-block" data-animate>
-            <article class="card">
-              <h3>应用场景</h3>
-              <p>夏季户外降温、运动后清凉、通勤/出行清凉、高温作业辅助降温、军训/马拉松/露营/活动赠品。</p>
+        <p class="cooling-divider" data-animate>同一块布 · 两面可选 · 自由切换贴肤面</p>
+
+        <!-- Block 2: 结构性凉感 vs 涂层凉感 -->
+        <div class="cooling-contrast" data-animate>
+          <h3>结构性凉感 ≠ 涂层凉感</h3>
+          <div class="grid grid-2 contrast-grid">
+            <article class="contrast-card contrast-card--bad">
+              <h4 class="contrast-card__title">涂层凉感 ✕</h4>
+              <p>表面涂凉感剂 → 洗两次就没了 → 消费者感觉被骗 → 零复购</p>
+              <span class="contrast-card__foot">无第三方检测数据</span>
             </article>
-            <article class="card">
-              <h3>客户价值</h3>
-              <p>AquaChill 的客户价值是帮助客户开发夏季降温功能消费品，而不是提供普通清洁材料。</p>
+            <article class="contrast-card contrast-card--good">
+              <h4 class="contrast-card__title">结构性凉感 ✓</h4>
+              <p>纤维结构本身的物理蒸发 → 洗不掉、不衰减 → 12h 持续降温</p>
+              <span class="contrast-card__foot">Qmax 0.58 · 中纺联检背书</span>
             </article>
           </div>
+
+          <div class="cooling-mechanism">
+            <span class="mech-node">白面蓄水</span>
+            <span class="mech-arrow">→ 毛细作用 →</span>
+            <span class="mech-node mech-node--active">绿面蒸发释放 ❄</span>
+          </div>
+          <p class="cooling-mechanism__caption">单向凉感通道 · 12h 持续蒸发降温 · Qmax 0.58 第三方检测可查</p>
+          <p class="cooling-mechanism__cert">检测机构：中纺联检（TTTS）· GB/T 35263-2017 · 2026年6月</p>
+        </div>
+
+        <!-- Block 3: Qmax 行业对标 -->
+        <div class="cooling-benchmark" data-animate>
+          <h3>Qmax 凉感值行业对标</h3>
+          <div class="qmax-bars">
+            <div class="qmax-bar__row"><span class="qmax-bar__label">普通棉</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--t1" style="width:17%"></span></span><span class="qmax-bar__val">0.10</span></div>
+            <div class="qmax-bar__row"><span class="qmax-bar__label">国标凉感门槛</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--t1" style="width:26%"></span></span><span class="qmax-bar__val">0.15</span></div>
+            <div class="qmax-bar__row"><span class="qmax-bar__label">凉感T恤入门</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--t2" style="width:34%"></span></span><span class="qmax-bar__val">0.20</span></div>
+            <div class="qmax-bar__row"><span class="qmax-bar__label">冰丝/凉感锦纶上限</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--t3" style="width:52%"></span></span><span class="qmax-bar__val">0.30</span></div>
+            <div class="qmax-bar__row"><span class="qmax-bar__label">高端运动凉感面料</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--t4" style="width:69%"></span></span><span class="qmax-bar__val">0.40</span></div>
+            <div class="qmax-bar__row qmax-bar__row--aq"><span class="qmax-bar__label">AQ 水刺面</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--aq2" style="width:71%"></span></span><span class="qmax-bar__val qmax-bar__val--aq">0.41</span><span class="qmax-bar__tag">超出天花板</span></div>
+            <div class="qmax-bar__row qmax-bar__row--aq"><span class="qmax-bar__label">AQ 熔喷面 🔥</span><span class="qmax-bar__track"><span class="qmax-bar__fill qmax-bar__fill--aq" style="width:100%"></span></span><span class="qmax-bar__val qmax-bar__val--aq">0.58</span><span class="qmax-bar__tag">国标 3.9 倍</span></div>
+          </div>
+          <p class="qmax-bars__foot">检测机构：中纺联检（TTTS）· GB/T 35263-2017 · 2026.6</p>
+        </div>
+
+        <!-- Block 4: 四大支撑卖点 + 场景 -->
+        <div class="cooling-pillars" data-animate>
+          <h3>不止凉感——四个维度支撑你的产品决策</h3>
+          <div class="grid grid-4 aq-pillar-grid">
+            <article class="card aq-pillar-card">
+              <span class="aq-pillar__num">①</span>
+              <h4>纤维完整 · 零脱落</h4>
+              <p>长纤维熔喷工艺，从根源杜绝脱落。横/纵强力 5.6× / 5.0× 竞品。</p>
+            </article>
+            <article class="card aq-pillar-card">
+              <span class="aq-pillar__num">②</span>
+              <h4>七彩色系 · 纤维级固色</h4>
+              <p>冰川绿 / 冷泉蓝 / 冰桔橙 / 薄暮紫 / 冰蜜粉 / 晨曦黄 / 冰莓红。色母粒锁色，永不掉色。500kg 起订。</p>
+            </article>
+            <article class="card aq-pillar-card">
+              <span class="aq-pillar__num">③</span>
+              <h4>宽幅 75–80cm</h4>
+              <p>比竞品常规 60cm 宽 25%+，男性使用体验显著提升。</p>
+            </article>
+            <article class="card aq-pillar-card">
+              <span class="aq-pillar__num">④</span>
+              <h4>六种成品形态</h4>
+              <p>凉感湿巾 / 小毛巾 / 降温巾 / 冰敷巾 / 运动毛巾 / 宠物垫。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="aquachill-scenes" data-animate>
+          <div class="scene-gallery">
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 军训场景.jpg" alt="军训场景" loading="lazy">
+              <span class="scene-label">军训场景</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 马拉松使用场景.jpg" alt="马拉松场景" loading="lazy">
+              <span class="scene-label">马拉松场景</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 户外徒步使用场景.jpg" alt="户外徒步场景" loading="lazy">
+              <span class="scene-label">户外徒步场景</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 羽毛球使用场景.jpg" alt="羽毛球场景" loading="lazy">
+              <span class="scene-label">羽毛球场景</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 健身房使用场景.jpg" alt="健身房场景" loading="lazy">
+              <span class="scene-label">健身房场景</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/aquachill/scenes/AquaChill 宠物降温垫使用场景.jpg" alt="宠物降温垫场景" loading="lazy">
+              <span class="scene-label">宠物降温垫场景</span>
+            </div>
+          </div>
+          <p class="scene-gallery__caption">可制成：凉感湿巾 · 凉感小毛巾 · 降温巾 · 冰敷巾 · 运动毛巾 · 宠物降温垫</p>
         </div>
       </div>
     </section>
@@ -2159,7 +3304,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§16</p>
+            <p class="section-kicker">§17</p>
             <h2>PBT 耐高温过滤材料</h2>
           </div>
           <p class="lead">以高性能 PBT 切片为原材料，可在 120℃ 下长期使用，适用于高温空气、高温液体过滤领域。</p>
@@ -2209,7 +3354,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§17</p>
+            <p class="section-kicker">§18</p>
             <h2>工业吸附与擦拭</h2>
           </div>
           <p class="lead">强调现场使用效率、吸附能力、低掉屑和包装规格。</p>
@@ -2241,7 +3386,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§18</p>
+            <p class="section-kicker">§19</p>
             <h2>空气与液体过滤</h2>
           </div>
           <p class="lead">空气过滤强调效率、阻力、容尘量、复合适配；液体过滤强调孔径、纳污能力、结构稳定和工况适配。</p>
@@ -2270,7 +3415,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§19</p>
+            <p class="section-kicker">§20</p>
             <h2>口罩熔喷材料</h2>
           </div>
           <p class="lead">作为熔喷工艺成熟度证明，不把康乃尔定位成“口罩布供应商”。</p>
@@ -2316,7 +3461,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§19b</p>
+            <p class="section-kicker">§21</p>
             <h2>研发实力 · 专利成果</h2>
           </div>
           <p class="lead">依托产学研深度合作，围绕熔喷核心工艺持续布局自主知识产权体系。</p>
@@ -2394,7 +3539,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§21</p>
+            <p class="section-kicker">§22</p>
             <h2>联合开发流程</h2>
           </div>
           <p class="lead">围绕客户的差异化需求，持续提供材料适配与验证迭代的解决方案。</p>
@@ -2440,7 +3585,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§22</p>
+            <p class="section-kicker">§23</p>
             <h2>质量控制</h2>
           </div>
           <p class="lead">客户最关心的是批次稳定、问题可追溯、异常能闭环处理。</p>
@@ -2479,16 +3624,16 @@
 
           <div class="quality-scenes">
             <div class="quality-scene">
-              <img src="assets/quality/qc-01-lab.jpg" alt="质量检测实验室" loading="lazy">
+              <img src="assets/company/lab-testing-02.jpg" alt="实验室检测设备" loading="lazy">
               <span class="scene-label">检测实验室</span>
             </div>
             <div class="quality-scene">
-              <img src="assets/quality/qc-02-inline.jpg" alt="生产线在线检验" loading="lazy">
-              <span class="scene-label">在线检验</span>
+              <img src="assets/lab-equipment-2.jpg" alt="空滤性能测试仪器" loading="lazy">
+              <span class="scene-label">性能测试</span>
             </div>
             <div class="quality-scene">
-              <img src="assets/quality/qc-03-traceability.jpg" alt="批次追溯管理系统" loading="lazy">
-              <span class="scene-label">批次追溯</span>
+              <img src="assets/lab-equipment-3.jpg" alt="京博研究院实验场景" loading="lazy">
+              <span class="scene-label">研究院实验室</span>
             </div>
           </div>
         </div>
@@ -2499,7 +3644,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§23</p>
+            <p class="section-kicker">§24</p>
             <h2>检测能力</h2>
           </div>
           <p class="lead">按产品分类组织检测项目，只列实际能自测或能委外验证的项目。</p>
@@ -2528,111 +3673,13 @@
             </tbody>
           </table>
           <div class="image-frame" data-animate>
-            <img src="assets/company/lab-testing-02.jpg" alt="康乃尔检测能力场景">
-            <div class="image-caption">检测能力场景</div>
+            <img src="assets/lab-equipment-1.jpg" alt="康乃尔检测实验室">
+            <div class="image-caption">检测实验室</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="supply" data-section data-group="quality">
-      <div class="section-shell">
-        <div class="section-header" data-animate>
-          <div>
-            <p class="section-kicker">§24</p>
-            <h2>供应保障</h2>
-          </div>
-          <p class="lead">客户不只是买样品，更关心通过验证后能不能批量、稳定、按期交付。</p>
-        </div>
-        <div class="supply-grid" data-animate>
-          <article class="card">
-            <img src="assets/products/supply-01-raw-material.jpg" alt="原料保障" loading="lazy">
-            <span class="card-label">原料保障</span>
-            <p class="card-desc">PP 聚丙烯粒子入库验收，从源头把控品质</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-02-capacity.jpg" alt="产能安排" loading="lazy">
-            <span class="card-label">产能安排</span>
-            <p class="card-desc">智能排产系统，29 条生产线灵活调度</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-03-sample.jpg" alt="样品响应" loading="lazy">
-            <span class="card-label">样品响应</span>
-            <p class="card-desc">7 天打样周期，快速响应客户需求</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-04-leadtime.jpg" alt="常规交期" loading="lazy">
-            <span class="card-label">常规交期</span>
-            <p class="card-desc">稳定产能保障，按期交付</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-05-packaging.jpg" alt="包装方式" loading="lazy">
-            <span class="card-label">包装方式</span>
-            <p class="card-desc">专业卷材包装，防潮防损</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-06-warehouse.jpg" alt="仓储管理" loading="lazy">
-            <span class="card-label">仓储管理</span>
-            <p class="card-desc">智能化仓库，精准库存管理</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-07-logistics.jpg" alt="物流配合" loading="lazy">
-            <span class="card-label">物流配合</span>
-            <p class="card-desc">17.5 米大板车专线配送</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-08-traceability.jpg" alt="批次追溯" loading="lazy">
-            <span class="card-label">批次追溯</span>
-            <p class="card-desc">全流程条码追溯，质量可追踪</p>
-          </article>
-          <article class="card">
-            <img src="assets/products/supply-09-urgent.jpg" alt="急单沟通机制" loading="lazy">
-            <span class="card-label">急单沟通机制</span>
-            <p class="card-desc">专人对接，急单快速响应通道</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact" data-section data-group="contact">
-      <div class="section-shell">
-        <div class="section-header" data-animate>
-          <div>
-            <p class="section-kicker">§25</p>
-            <h2>合作流程</h2>
-          </div>
-          <p class="lead">如果客户有现有样品或目标参数，可以按流程快速推进打样和测试。</p>
-        </div>
-        <div class="contact-panel">
-          <div data-animate>
-            <div class="process">
-              <div class="process-step">提供目标应用或现有样品</div>
-              <div class="process-step">确认关键参数</div>
-              <div class="process-step">提供样品</div>
-              <div class="process-step">客户测试反馈</div>
-              <div class="process-step">参数调整</div>
-              <div class="process-step">报价确认</div>
-              <div class="process-step">小批量验证</div>
-              <div class="process-step">批量供货</div>
-            </div>
-            <div class="image-frame" style="margin-top:1.5rem;">
-              <img src="assets/contact/cooperation-flow.jpg" alt="合作流程图">
-              <div class="image-caption">合作流程素材</div>
-            </div>
-          </div>
-          <aside class="contact-card" data-animate>
-            <h3>联系方式</h3>
-            <ul class="contact-list">
-              <li><strong>联系人</strong><span>栗志</span></li>
-              <li><strong>电话</strong><span>18516826000（微信同号）</span></li>
-              <li><strong>邮箱</strong><span><a href="mailto:zhi.li@chambroad.com" style="color:inherit">zhi.li@chambroad.com</a></span></li>
-              <li><strong>地址</strong><span>山东省滨州市博兴县京博工业园</span></li>
-              <li><strong>官网</strong><span><a href="https://www.cornellnonwoven.com" style="color:inherit" target="_blank" rel="noopener">www.cornellnonwoven.com</a></span></li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
   </main>
 
   <script>
