@@ -302,12 +302,6 @@
       color: var(--text-secondary);
     }
 
-    .source {
-      margin-top: 1rem;
-      color: var(--text-muted);
-      font-size: var(--fs-small);
-    }
-
     .hero {
       min-height: 100svh;
       display: flex;
@@ -316,7 +310,7 @@
       padding-bottom: 4rem;
       color: #fff;
       background:
-        linear-gradient(110deg, rgba(11, 31, 54, 0.94), rgba(27, 58, 91, 0.84) 44%, rgba(27, 58, 91, 0.48)),
+        linear-gradient(110deg, rgba(11, 31, 54, 0.88), rgba(27, 58, 91, 0.74) 44%, rgba(27, 58, 91, 0.52)),
         url("assets/company/plant-exterior.png") center / cover;
     }
 
@@ -346,13 +340,13 @@
       width: min(100%, var(--max-width));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
-      gap: 4rem;
+      grid-template-columns: 1fr;
+      gap: 0;
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 730px;
+      max-width: 820px;
     }
 
     .hero h1 {
@@ -417,84 +411,6 @@
     .button-secondary:hover {
       transform: translateY(-2px);
       background: rgba(255,255,255,0.14);
-    }
-
-    .hero-media {
-      position: relative;
-      min-height: 560px;
-    }
-
-    .hero-image {
-      position: absolute;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 28px 70px rgba(0,0,0,0.32);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-image.large {
-      right: 0;
-      top: 0;
-      width: 78%;
-      height: 58%;
-    }
-
-    .hero-image.small-a {
-      left: 0;
-      bottom: 14%;
-      width: 58%;
-      height: 34%;
-    }
-
-    .hero-image.small-b {
-      right: 8%;
-      bottom: 0;
-      width: 50%;
-      height: 28%;
-    }
-
-    .hero-stat-strip {
-      position: relative;
-      z-index: 2;
-      width: min(100%, var(--max-width));
-      margin: 3.2rem auto 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 22px 50px rgba(0,0,0,0.18);
-    }
-
-    .hero-stat {
-      padding: 1.3rem 1.2rem;
-      background: rgba(255,255,255,0.11);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-family: var(--font-number);
-      font-size: 2.1rem;
-      line-height: 1.1;
-      color: #fff;
-      white-space: nowrap;
-    }
-
-    .hero-stat span {
-      display: block;
-      margin-top: 0.35rem;
-      color: rgba(255,255,255,0.76);
-      font-size: 0.92rem;
     }
 
     .grid {
@@ -681,6 +597,20 @@
       display: grid;
       grid-template-rows: auto auto 1fr;
       gap: 0.7rem;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .matrix-card .product-img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+
+    .matrix-card .product-body {
+      padding: 1.1rem 1.35rem 1.35rem;
     }
 
     .matrix-card .product-no {
@@ -785,12 +715,90 @@
 
     .media-stack {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
     }
 
     .media-stack .image-frame img {
       aspect-ratio: 4 / 3;
+    }
+
+    .scene-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .scene-gallery .scene-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .scene-gallery .scene-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .scene-gallery .scene-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .scene-gallery .scene-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.5rem 0.75rem;
+      background: linear-gradient(180deg, transparent, rgba(11, 31, 54, 0.78));
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tpu-scenes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .tpu-scenes .scene-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .tpu-scenes .scene-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tpu-scenes .scene-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tpu-scenes .scene-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.5rem 0.75rem;
+      background: linear-gradient(180deg, transparent, rgba(11, 31, 54, 0.78));
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .parameter-cloud {
@@ -935,8 +943,7 @@
 
     .process-step {
       position: relative;
-      min-height: 132px;
-      padding: 1.2rem;
+      padding: 0;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       background: #fff;
@@ -944,13 +951,31 @@
       counter-increment: step;
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
-      justify-content: space-between;
-      font-weight: 800;
-      color: var(--brand-blue);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
     }
 
-    .process-step::before {
+    .process-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .process-step .step-icon {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-secondary);
+    }
+
+    .process-step .step-body {
+      padding: 1rem 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .process-step .step-body::before {
       content: counter(step, decimal-leading-zero);
       font-family: var(--font-number);
       color: var(--accent-cyan);
@@ -958,59 +983,163 @@
       font-size: 0.92rem;
     }
 
+    .process-step .step-label {
+      font-weight: 800;
+      color: var(--brand-blue);
+      font-size: 1.02rem;
+    }
+
     .quality-layout {
       display: grid;
-      grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1fr);
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 3rem;
       align-items: start;
     }
 
-    .check-chain {
+    .quality-flow {
       display: grid;
-      gap: 0.75rem;
-      counter-reset: quality;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-    .check-chain li {
-      list-style: none;
+    .quality-step {
+      position: relative;
+      padding: 1.8rem 1.5rem;
+      background: var(--surface);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       counter-increment: quality;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 0.85rem;
-      align-items: center;
-      padding: 0.95rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: #fff;
-      color: var(--text-secondary);
-      font-weight: 700;
     }
 
-    .check-chain li::before {
+    .quality-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .quality-step::before {
       content: counter(quality);
-      width: 42px;
-      height: 42px;
+      position: absolute;
+      top: -16px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
-      border-radius: 8px;
-      background: var(--brand-blue-50);
-      color: var(--brand-blue);
-      font-family: var(--font-number);
-      font-weight: 850;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00A6B6 0%, #14B8A6 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 10px rgba(0, 166, 182, 0.3);
+    }
+
+    .quality-step h4 {
+      margin: 0.5rem 0 0.8rem;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .quality-step p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .quality-scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .quality-scene {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .quality-scene img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .quality-scene:hover img {
+      transform: scale(1.05);
+    }
+
+    .quality-scene .scene-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(to top, rgba(30, 58, 91, 0.95), transparent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .check-chain {
+      display: none;
     }
 
     .supply-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
+      gap: 1.25rem;
     }
 
     .supply-grid .card {
-      min-height: 104px;
+      padding: 0;
+      overflow: hidden;
       display: flex;
-      align-items: center;
-      font-weight: 800;
-      color: var(--brand-blue);
+      flex-direction: column;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+      background: var(--surface);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .supply-grid .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .supply-grid .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .supply-grid .card:hover img {
+      transform: scale(1.06);
+    }
+
+    .supply-grid .card .card-label {
+      padding: 0.85rem 1.1rem;
+      font-weight: 700;
+      color: #f8fafc;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      border-top: 2px solid var(--accent);
+    }
+
+    .supply-grid .card .card-desc {
+      padding: 0.75rem 1.1rem 1rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin: 0;
+      background: var(--surface);
     }
 
     .contact-panel {
@@ -1058,15 +1187,167 @@
       color: var(--brand-blue);
     }
 
+    /* ===== Scroll Progress Bar ===== */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--cta-blue));
+      z-index: 100;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 8px rgba(0, 166, 182, 0.5);
+    }
+
+    /* ===== Staggered Entrance Animations ===== */
     [data-animate] {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     [data-animate].visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Stagger children inside grids */
+    .grid [data-animate]:nth-child(1),
+    .media-stack [data-animate]:nth-child(1),
+    .feature-strip [data-animate]:nth-child(1) { transition-delay: 0s; }
+    .grid [data-animate]:nth-child(2),
+    .media-stack [data-animate]:nth-child(2),
+    .feature-strip [data-animate]:nth-child(2) { transition-delay: 0.1s; }
+    .grid [data-animate]:nth-child(3),
+    .media-stack [data-animate]:nth-child(3),
+    .feature-strip [data-animate]:nth-child(3) { transition-delay: 0.2s; }
+    .grid [data-animate]:nth-child(4),
+    .feature-strip [data-animate]:nth-child(4) { transition-delay: 0.3s; }
+    .grid [data-animate]:nth-child(5) { transition-delay: 0.4s; }
+    .grid [data-animate]:nth-child(6) { transition-delay: 0.5s; }
+
+    /* ===== Hero Entrance ===== */
+    .hero-copy > * {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-copy > *:nth-child(1) { animation-delay: 0.15s; }
+    .hero-copy > *:nth-child(2) { animation-delay: 0.35s; }
+    .hero-copy > *:nth-child(3) { animation-delay: 0.55s; }
+    .hero-copy > *:nth-child(4) { animation-delay: 0.75s; }
+
+    @keyframes heroFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header h2 {
+      position: relative;
+    }
+
+    .section-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), transparent);
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    }
+
+    .section-header.visible h2::after {
+      width: 60px;
+    }
+
+    /* ===== Image Frame Hover Zoom ===== */
+    .image-frame {
+      overflow: hidden;
+    }
+
+    .image-frame img {
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.06);
+    }
+
+    /* ===== Card Hover Glow ===== */
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(27, 58, 91, 0.14), 0 0 0 1px rgba(0, 166, 182, 0.15);
+      border-color: rgba(0, 166, 182, 0.3);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent-cyan), var(--cta-blue));
+    }
+
+    /* ===== Button Hover Shine ===== */
+    .button-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button-primary::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.6s ease;
+    }
+
+    .button-primary:hover::after {
+      left: 120%;
+    }
+
+    /* ===== Stat Card Number Pop ===== */
+    .stat-card .stat-value {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .stat-card.visible .stat-value {
+      animation: numberPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+    }
+
+    @keyframes numberPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== Relation Node Connect ===== */
+    .relation-node {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+
+    .relation-node:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(27, 58, 91, 0.12);
+    }
+
+    /* ===== Table Row Fade ===== */
+    .plain-table tbody tr {
+      transition: background 0.3s ease;
+    }
+
+    .plain-table tbody tr:hover {
+      background: rgba(0, 166, 182, 0.04);
+    }
+
+    /* ===== Nav Link Underline Grow ===== */
+    .nav-links a::after {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     @media (max-width: 1120px) {
@@ -1083,10 +1364,6 @@
       .quality-layout,
       .contact-panel {
         grid-template-columns: 1fr;
-      }
-
-      .hero-media {
-        min-height: 430px;
       }
 
       .grid-4,
@@ -1149,14 +1426,6 @@
         gap: 2rem;
       }
 
-      .hero-media {
-        min-height: 310px;
-      }
-
-      .hero-stat-strip {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .grid-3,
       .grid-4,
       .feature-strip,
@@ -1210,37 +1479,38 @@
         font-size: 1.12rem;
       }
 
-      .hero-stat-strip,
       .grid-2,
       .attribute-grid,
       .app-list,
       .media-stack,
-      .aqua-metrics {
+      .aqua-metrics,
+      .scene-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .scene-gallery {
         grid-template-columns: 1fr;
-      }
-
-      .hero-stat strong {
-        font-size: 1.75rem;
-      }
-
-      .hero-image.large {
-        width: 86%;
-        height: 54%;
-      }
-
-      .hero-image.small-a {
-        width: 66%;
-        height: 34%;
-      }
-
-      .hero-image.small-b {
-        width: 58%;
-        height: 30%;
       }
 
       .spec-list li,
       .contact-list li {
         grid-template-columns: 1fr;
+      }
+
+      .quality-layout {
+        gap: 2rem;
+      }
+
+      .quality-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .quality-scenes {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1261,11 +1531,46 @@
         opacity: 1;
         transform: none;
       }
+
+      .hero-copy > * {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
     }
+    /* ===== Patent Wall ===== */
+    .patent-wall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .patent-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .patent-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+    .patent-card img { width: 100%; aspect-ratio: 600 / 849; object-fit: cover; display: block; }
+    .patent-card-body { padding: 0.85rem 1rem; }
+    .patent-card-body h4 { margin: 0 0 0.3rem; font-size: 0.92rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; }
+    .patent-card-body .patent-meta { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
+    .patent-card-body .patent-badge { display: inline-block; margin-top: 0.4rem; padding: 0.15rem 0.5rem; font-size: 0.72rem; font-weight: 600; border-radius: 4px; background: var(--brand-blue-50); color: var(--brand-blue); }
+    .patent-card-body .patent-badge.granted { background: #E8F5E9; color: #2E7D32; }
+    .patent-card-body .patent-badge.published { background: #FFF3E0; color: #E65100; }
+    .patent-stat-row { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+    .patent-stat-item { text-align: center; flex: 1; min-width: 120px; padding: 1rem; background: var(--bg-secondary); border-radius: var(--radius-sm); }
+    .patent-stat-num { font-family: var(--font-number); font-size: var(--fs-stat); font-weight: 800; color: var(--brand-blue); line-height: 1; }
+    .patent-stat-label { font-size: var(--fs-small); color: var(--text-secondary); margin-top: 0.3rem; }
+    @media (max-width: 768px) { .patent-wall { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } }
+    @media (max-width: 480px) { .patent-wall { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="主导航">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="site-nav" role="navigation" aria-label="主导航">
     <div class="nav-inner">
       <a class="brand" href="#hero" aria-label="返回封面">
         <span class="brand-mark">KN</span>
@@ -1295,35 +1600,6 @@
               <a class="button button-primary" href="#products">了解产品矩阵 →</a>
               <a class="button button-secondary" href="#contact">联系合作</a>
             </div>
-          </div>
-          <div class="hero-media" data-animate>
-            <div class="hero-image large">
-              <img src="assets/company/production-line.jpg" alt="康乃尔生产线实景">
-            </div>
-            <div class="hero-image small-a">
-              <img src="assets/company/chambroad-campus.JPG" alt="京博集团厂区鸟瞰">
-            </div>
-            <div class="hero-image small-b">
-              <img src="assets/tpu/tpu-microstructure.jpg" alt="TPU 材料微结构">
-            </div>
-          </div>
-        </div>
-        <div class="hero-stat-strip" data-animate>
-          <div class="hero-stat">
-            <strong><span class="count" data-count="1030">0</span> 亿元</strong>
-            <span>京博集团 2024 年销售额</span>
-          </div>
-          <div class="hero-stat">
-            <strong><span class="count" data-count="29">0</span> 条</strong>
-            <span>康乃尔现有各类生产线</span>
-          </div>
-          <div class="hero-stat">
-            <strong>万吨+</strong>
-            <span>年产非织造材料产能</span>
-          </div>
-          <div class="hero-stat">
-            <strong><span class="count" data-count="50">0</span>+ 国家</strong>
-            <span>集团业务覆盖</span>
           </div>
         </div>
       </div>
@@ -1364,7 +1640,6 @@
             <p class="stat-label">中国企业 500 强</p>
           </article>
         </div>
-        <p class="source" data-animate>来源：京博控股集团简介 V8 P2-P3</p>
       </div>
     </section>
 
@@ -1397,14 +1672,13 @@
                 <p class="stat-label">国家级研发平台</p>
               </article>
             </div>
-            <p class="source">来源：京博控股集团简介 V8 P13-P14</p>
           </div>
           <div class="card" data-animate>
             <h3>研发体系</h3>
             <p style="margin-top:1rem;">1 个中央研究院 → 18 个研发单位 → 13 个科创中心 → 3 个驻外研发基地 → 5 个实体化校企平台 → 20+ 省部级平台</p>
             <div class="image-frame" style="margin-top:1.25rem;">
-              <img src="assets/company/lab-testing-01.jpg" alt="材料检测实验室">
-              <div class="image-caption">实验室检测场景</div>
+              <img src="assets/company/chambroad-campus.JPG" alt="京博集团研发体系">
+              <div class="image-caption">京博集团研发体系</div>
             </div>
           </div>
         </div>
@@ -1429,7 +1703,6 @@
           <div class="text-block" data-animate>
             <p>康乃尔是京博集团旗下新材料方向核心子公司，集高性能非织造材料研发、智造、销售、服务于一体，聚焦医用卫生与功能性材料。</p>
             <p>康乃尔的价值不是只生产某一种布，而是把集团新材料能力转化为医卫、清洁、过滤、吸附等场景的产品交付。</p>
-            <p class="source">来源：京博·康乃尔产品手册 P4</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/company/plant-exterior.png" alt="康乃尔厂区外景">
@@ -1476,7 +1749,6 @@
             <div class="image-caption">生产线实景</div>
           </div>
         </div>
-        <p class="source" data-animate>来源：京博·康乃尔产品手册 P4</p>
       </div>
     </section>
 
@@ -1491,40 +1763,58 @@
         </div>
         <div class="grid grid-3">
           <article class="card matrix-card" data-animate>
-            <span class="product-no">01</span>
-            <h3>TPU 弹性透气材料</h3>
-            <p>应用方向：医疗敷料、传感器敷贴、弹性绷带、卫生用品。</p>
-            <p>客户价值：贴身舒适、透气亲肤、可定制。</p>
+            <img class="product-img" src="assets/products/tpu-medical-dressing.jpg" alt="TPU 医用敷料" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">01</span>
+              <h3>TPU 弹性透气材料</h3>
+              <p>应用方向：医疗敷料、传感器敷贴、弹性绷带、卫生用品。</p>
+              <p>客户价值：贴身舒适、透气亲肤、可定制。</p>
+            </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <span class="product-no">02</span>
-            <h3>功能性生活材料</h3>
-            <p>应用方向：MaxiScrub 清洁擦拭 / AquaChill 凉感毛巾。</p>
-            <p>客户价值：物理去污 / 夏季降温。</p>
+            <img class="product-img" src="assets/products/kitchen-cleaning-wipe.jpg" alt="厨房清洁擦拭巾" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">02</span>
+              <h3>功能性生活材料</h3>
+              <p>应用方向：MaxiScrub 清洁擦拭 / AquaChill 凉感毛巾。</p>
+              <p>客户价值：物理去污 / 夏季降温。</p>
+            </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <span class="product-no">03</span>
-            <h3>PBT 耐高温过滤材料</h3>
-            <p>应用方向：高温空气/液体过滤。</p>
-            <p>客户价值：120℃长期使用、孔径可调。</p>
+            <img class="product-img" src="assets/products/pbt-oil-filter.jpg" alt="PBT 机油过滤器" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">03</span>
+              <h3>PBT 耐高温过滤材料</h3>
+              <p>应用方向：高温空气/液体过滤。</p>
+              <p>客户价值：120℃长期使用、孔径可调。</p>
+            </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <span class="product-no">04</span>
-            <h3>工业吸附与擦拭产品</h3>
-            <p>应用方向：零件清洁、油污清理、设备维护。</p>
-            <p>客户价值：低掉屑、高吸附、防静电。</p>
+            <img class="product-img" src="assets/products/industrial-absorbent-pad.jpg" alt="工业吸油片" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">04</span>
+              <h3>工业吸附与擦拭产品</h3>
+              <p>应用方向：零件清洁、油污清理、设备维护。</p>
+              <p>客户价值：低掉屑、高吸附、防静电。</p>
+            </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <span class="product-no">05</span>
-            <h3>空气与液体过滤材料</h3>
-            <p>应用方向：空气净化、新风系统、汽车空调。</p>
-            <p>客户价值：高效率、大容尘、低阻力。</p>
+            <img class="product-img" src="assets/products/air-liquid-filter-cartridge.jpg" alt="空气与液体过滤芯" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">05</span>
+              <h3>空气与液体过滤材料</h3>
+              <p>应用方向：空气净化、新风系统、汽车空调。</p>
+              <p>客户价值：高效率、大容尘、低阻力。</p>
+            </div>
           </article>
           <article class="card matrix-card" data-animate>
-            <span class="product-no">06</span>
-            <h3>高透低阻口罩熔喷材料</h3>
-            <p>应用方向：医用外科/防护口罩。</p>
-            <p>客户价值：超低阻力、高过滤效率。</p>
+            <img class="product-img" src="assets/products/surgical-mask.jpg" alt="医用外科口罩" loading="lazy">
+            <div class="product-body">
+              <span class="product-no">06</span>
+              <h3>高透低阻口罩熔喷材料</h3>
+              <p>应用方向：医用外科/防护口罩。</p>
+              <p>客户价值：超低阻力、高过滤效率。</p>
+            </div>
           </article>
         </div>
       </div>
@@ -1558,12 +1848,30 @@
               <tr><td>口罩/防护</td><td>高透低阻口罩熔喷材料</td></tr>
             </tbody>
           </table>
-          <div class="media-stack" data-animate>
-            <div class="image-frame">
-              <img src="assets/tpu/tpu-wound-dressing.jpg" alt="TPU 医卫材料应用图">
+          <div class="scene-gallery" data-animate>
+            <div class="scene-item">
+              <img src="assets/products/scene-medical-care.jpg" alt="医用护理场景" loading="lazy">
+              <span class="scene-label">医用护理</span>
             </div>
-            <div class="image-frame">
-              <img src="assets/aquachill/aquachill-outdoor.jpg" alt="AquaChill 户外降温使用场景">
+            <div class="scene-item">
+              <img src="assets/products/scene-kitchen-cleaning.jpg" alt="生活清洁场景" loading="lazy">
+              <span class="scene-label">生活清洁</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/scene-heavy-machinery.jpg" alt="高温过滤场景" loading="lazy">
+              <span class="scene-label">高温过滤</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/scene-industrial-workshop.jpg" alt="工业吸附场景" loading="lazy">
+              <span class="scene-label">工业吸附</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/scene-hvac-system.jpg" alt="空气过滤场景" loading="lazy">
+              <span class="scene-label">空气/液体过滤</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/scene-hospital-entrance.jpg" alt="口罩防护场景" loading="lazy">
+              <span class="scene-label">口罩/防护</span>
             </div>
           </div>
         </div>
@@ -1597,11 +1905,24 @@
               <div class="app-item"><span>4</span><span>卫生用品弹性材料</span></div>
             </div>
             <p>TPU 不是单一产品，而是可围绕客户终端应用做结构、克重、厚度、弹性、透气性适配的材料平台。</p>
-            <p class="source">来源：透气弹性材料产品介绍 P6-P8；产品手册 P8</p>
           </div>
-          <div class="image-frame" data-animate>
-            <img src="assets/tpu/tpu-microstructure.jpg" alt="TPU 弹性透气材料微结构">
-            <div class="image-caption">TPU 微孔结构素材</div>
+          <div class="tpu-scenes" data-animate>
+            <div class="scene-item">
+              <img src="assets/products/tpu-scene-dressing.jpg" alt="医用敷料应用场景" loading="lazy">
+              <span class="scene-label">医疗敷料与创口护理</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/tpu-scene-sensor.jpg" alt="传感器敷贴应用场景" loading="lazy">
+              <span class="scene-label">医用传感器敷贴</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/tpu-scene-bandage.jpg" alt="弹性绷带应用场景" loading="lazy">
+              <span class="scene-label">弹性绷带与护具</span>
+            </div>
+            <div class="scene-item">
+              <img src="assets/products/tpu-scene-hygiene.jpg" alt="卫生用品弹性材料场景" loading="lazy">
+              <span class="scene-label">卫生用品弹性材料</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1630,7 +1951,6 @@
               <h3>客户价值</h3>
               <p>柔软、透气、贴合、亲肤、后加工适配。</p>
             </article>
-            <p class="source">来源：产品手册 P10-P12；透气弹性材料产品介绍 P8</p>
           </div>
         </div>
       </div>
@@ -1655,7 +1975,6 @@
               <h3>材料要求</h3>
               <p>长时间贴敷舒适性、透气性、皮肤贴合性、复合结构稳定性、胶层/基材适配。</p>
             </article>
-            <p class="source">来源：栗志补充；TPU 材料通用属性来源于透气弹性材料产品介绍 P6-P8</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/tpu/tpu-sensor-patch.jpg" alt="TPU 医用传感器敷贴材料方向">
@@ -1689,7 +2008,6 @@
               <p>弹性回复、贴合支撑、透气舒适、耐用、与无纺布/织物/其他基材复合适配。</p>
             </article>
             <p>TPU 弹性透气材料适合作为复合材料开发方向。</p>
-            <p class="source">来源：栗志补充；产品手册 P10-P11 KNE-TQM 应用</p>
           </div>
         </div>
       </div>
@@ -1715,7 +2033,6 @@
               <p>弹性、柔软、透气、贴合、批次稳定、可复合加工。</p>
             </article>
             <p>康乃尔可围绕终端产品结构做材料适配。</p>
-            <p class="source">来源：栗志补充；产品属性来源于透气弹性材料资料</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/tpu/tpu-stretch.jpg" alt="TPU 弹性材料拉伸展示">
@@ -1753,7 +2070,6 @@
               <span>KNE-AP</span>
               <span>KNE-FM</span>
             </div>
-            <p class="source">来源：产品手册 P10-P13；透气弹性材料产品介绍 P8</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/tpu/customization-flow.jpg" alt="TPU 定制开发流程图">
@@ -1788,7 +2104,6 @@
             </div>
             <p>一张基材兼顾重污强擦与精细收尾，物理摩擦去污。</p>
             <p>应用场景：厨房擦拭湿巾、厨房洗碗抹布、小白鞋功能性湿巾。</p>
-            <p class="source">来源：MaxiScrub-3D.pdf P1-P8</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/maxiscrub/maxiscrub-structure.jpg" alt="MaxiScrub 结构示意图">
@@ -1835,7 +2150,6 @@
               <h3>客户价值</h3>
               <p>AquaChill 的客户价值是帮助客户开发夏季降温功能消费品，而不是提供普通清洁材料。</p>
             </article>
-            <p class="source">来源：AquaChill_Spec_Sheet.pdf P1-P2</p>
           </div>
         </div>
       </div>
@@ -1852,8 +2166,8 @@
         </div>
         <div class="split">
           <div class="image-frame" data-animate>
-            <img src="assets/generated/pbt-filter-media.png" alt="PBT 过滤材料通用材料场景图">
-            <div class="image-caption">通用材料场景图</div>
+            <img src="assets/products/pbt-high-temp-product.png" alt="PBT 耐高温过滤材料产品实拍图">
+            <div class="image-caption">产品实拍图</div>
           </div>
           <div class="text-block" data-animate>
             <div class="tech-specs">
@@ -1886,7 +2200,6 @@
               </article>
             </div>
             <p>孔径、克重、厚度、透气量可调控。</p>
-            <p class="source">来源：产品手册 P22-P24；PBT 技术协议 PDF</p>
           </div>
         </div>
       </div>
@@ -1919,7 +2232,6 @@
               <h3>应用场景</h3>
               <p>零件和工具清洁、油墨渗漏清理、机床和大型设备维护保养、重油污擦拭、配合溶剂进行表面处理。</p>
             </article>
-            <p class="source">来源：产品手册 P26-P28</p>
           </div>
         </div>
       </div>
@@ -1945,7 +2257,6 @@
               <h3>液体过滤</h3>
               <p>柴油车燃油过滤、油水分离等应用方向。</p>
             </article>
-            <p class="source">来源：产品手册 P18-P20、P22-P24</p>
           </div>
           <div class="image-frame" data-animate>
             <img src="assets/generated/air-liquid-filter-media.png" alt="空气与液体过滤材料通用材料场景图">
@@ -1996,7 +2307,84 @@
               </tbody>
             </table>
             <p>低克重可提高口罩产量 20% 以上。</p>
-            <p class="source">来源：产品手册 P16</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="patent-wall" data-section data-group="quality">
+      <div class="section-shell">
+        <div class="section-header" data-animate>
+          <div>
+            <p class="section-kicker">§19b</p>
+            <h2>研发实力 · 专利成果</h2>
+          </div>
+          <p class="lead">依托产学研深度合作，围绕熔喷核心工艺持续布局自主知识产权体系。</p>
+        </div>
+
+        <div class="patent-stat-row" data-animate>
+          <div class="patent-stat-item">
+            <div class="patent-stat-num">10<span style="font-size:0.5em;vertical-align:super;">+</span></div>
+            <div class="patent-stat-label">发明/实用新型专利</div>
+          </div>
+          <div class="patent-stat-item">
+            <div class="patent-stat-num">6</div>
+            <div class="patent-stat-label">已授权发明专利</div>
+          </div>
+          <div class="patent-stat-item">
+            <div class="patent-stat-num">100%</div>
+            <div class="patent-stat-label">发明专利占比</div>
+          </div>
+        </div>
+
+        <div class="patent-wall" data-animate>
+          <div class="patent-card">
+            <img src="assets/patents/patent_01_smart_blur.png" alt="微/纳交替纤维集合体的制备方法" loading="lazy">
+            <div class="patent-card-body">
+              <h4>微/纳交替纤维集合体的制备方法</h4>
+              <p class="patent-meta">发明人：东华大学 · 康乃尔联合研发</p>
+              <span class="patent-badge granted">已授权</span>
+            </div>
+          </div>
+          <div class="patent-card">
+            <img src="assets/patents/patent_02_smart_blur.png" alt="双介电聚合物共混熔喷纤维驻极非织造材料" loading="lazy">
+            <div class="patent-card-body">
+              <h4>双介电聚合物共混熔喷纤维驻极非织造材料</h4>
+              <p class="patent-meta">发明人：东华大学 · 康乃尔联合研发</p>
+              <span class="patent-badge granted">已授权</span>
+            </div>
+          </div>
+          <div class="patent-card">
+            <img src="assets/patents/patent_03_smart_blur.png" alt="弹力复合面膜基布及其制备方法" loading="lazy">
+            <div class="patent-card-body">
+              <h4>弹力复合面膜基布及其制备方法</h4>
+              <p class="patent-meta">发明人：康乃尔研发团队</p>
+              <span class="patent-badge granted">已授权 · 2025</span>
+            </div>
+          </div>
+          <div class="patent-card">
+            <img src="assets/patents/patent_04_smart_blur.png" alt="连续生产口罩复合布的设备" loading="lazy">
+            <div class="patent-card-body">
+              <h4>连续生产口罩复合布的设备</h4>
+              <p class="patent-meta">发明人：康乃尔研发团队</p>
+              <span class="patent-badge granted">已授权</span>
+            </div>
+          </div>
+          <div class="patent-card">
+            <img src="assets/patents/patent_05_smart_blur.png" alt="可重复水洗的复合空气滤料及其制备方法" loading="lazy">
+            <div class="patent-card-body">
+              <h4>可重复水洗的复合空气滤料及其制备方法</h4>
+              <p class="patent-meta">发明人：康乃尔研发团队</p>
+              <span class="patent-badge granted">已授权</span>
+            </div>
+          </div>
+          <div class="patent-card">
+            <img src="assets/patents/patent_06_smart_blur.png" alt="弹性医用胶带及其制备方法" loading="lazy">
+            <div class="patent-card-body">
+              <h4>弹性医用胶带及其制备方法</h4>
+              <p class="patent-meta">发明人：康乃尔研发团队</p>
+              <span class="patent-badge published">已公开</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2006,20 +2394,44 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§20</p>
+            <p class="section-kicker">§21</p>
             <h2>联合开发流程</h2>
           </div>
-          <p class="lead">合作方式不是简单报规格卖材料，而是围绕客户终端产品做材料适配和验证迭代。</p>
+          <p class="lead">围绕客户的差异化需求，持续提供材料适配与验证迭代的解决方案。</p>
         </div>
         <div class="process" data-animate>
-          <div class="process-step">应用场景沟通</div>
-          <div class="process-step">目标参数确认</div>
-          <div class="process-step">材料结构建议</div>
-          <div class="process-step">样品开发</div>
-          <div class="process-step">客户测试</div>
-          <div class="process-step">参数调整</div>
-          <div class="process-step">小批量验证</div>
-          <div class="process-step">批量供应</div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-01-communication.png" alt="应用场景沟通" loading="lazy">
+            <div class="step-body"><span class="step-label">应用场景沟通</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-02-parameters.png" alt="目标参数确认" loading="lazy">
+            <div class="step-body"><span class="step-label">目标参数确认</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-03-structure.png" alt="材料结构建议" loading="lazy">
+            <div class="step-body"><span class="step-label">材料结构建议</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-04-sample.png" alt="样品开发" loading="lazy">
+            <div class="step-body"><span class="step-label">样品开发</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-05-testing.png" alt="客户测试" loading="lazy">
+            <div class="step-body"><span class="step-label">客户测试</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-06-adjustment.png" alt="参数调整" loading="lazy">
+            <div class="step-body"><span class="step-label">参数调整</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-07-pilot.png" alt="小批量验证" loading="lazy">
+            <div class="step-body"><span class="step-label">小批量验证</span></div>
+          </div>
+          <div class="process-step">
+            <img class="step-icon" src="assets/products/dev-08-mass.png" alt="批量供应" loading="lazy">
+            <div class="step-body"><span class="step-label">批量供应</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -2028,25 +2440,57 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§21</p>
+            <p class="section-kicker">§22</p>
             <h2>质量控制</h2>
           </div>
           <p class="lead">客户最关心的是批次稳定、问题可追溯、异常能闭环处理。</p>
         </div>
-        <div class="quality-layout">
-          <div class="image-frame" data-animate>
-            <img src="assets/quality/quality-control-flow.jpg" alt="质量控制流程图">
-            <div class="image-caption">质量控制流程素材</div>
+        <div class="quality-layout" data-animate>
+          <div class="quality-flow">
+            <article class="quality-step">
+              <h4>原料控制</h4>
+              <p>PP 聚丙烯粒子入库前逐批检验熔指、灰分、含水率，不合格原料拒收。</p>
+            </article>
+            <article class="quality-step">
+              <h4>生产过程控制</h4>
+              <p>温度、压力、速度、张力实时在线监控，关键参数自动报警。</p>
+            </article>
+            <article class="quality-step">
+              <h4>关键参数检测</h4>
+              <p>克重、厚度、断裂强力、伸长率定时抽检，确保工艺窗口稳定。</p>
+            </article>
+            <article class="quality-step">
+              <h4>成品检验</h4>
+              <p>每卷成品下线前完成外观检查与物理性能全项检测，数据归档。</p>
+            </article>
+            <article class="quality-step">
+              <h4>留样管理</h4>
+              <p>每批次保留样品不少于 12 个月，可随时复测追溯。</p>
+            </article>
+            <article class="quality-step">
+              <h4>批次追溯</h4>
+              <p>从原料批号到成品卷号全链路条码管理，任意节点可正向/反向追溯。</p>
+            </article>
+            <article class="quality-step">
+              <h4>出货确认</h4>
+              <p>出货前核对批次、规格、数量，附带质检报告随货发出。</p>
+            </article>
           </div>
-          <ol class="check-chain" data-animate>
-            <li>原料控制</li>
-            <li>生产过程控制</li>
-            <li>关键参数检测</li>
-            <li>成品检验</li>
-            <li>留样管理</li>
-            <li>批次追溯</li>
-            <li>出货确认</li>
-          </ol>
+
+          <div class="quality-scenes">
+            <div class="quality-scene">
+              <img src="assets/quality/qc-01-lab.jpg" alt="质量检测实验室" loading="lazy">
+              <span class="scene-label">检测实验室</span>
+            </div>
+            <div class="quality-scene">
+              <img src="assets/quality/qc-02-inline.jpg" alt="生产线在线检验" loading="lazy">
+              <span class="scene-label">在线检验</span>
+            </div>
+            <div class="quality-scene">
+              <img src="assets/quality/qc-03-traceability.jpg" alt="批次追溯管理系统" loading="lazy">
+              <span class="scene-label">批次追溯</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2055,7 +2499,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§22</p>
+            <p class="section-kicker">§23</p>
             <h2>检测能力</h2>
           </div>
           <p class="lead">按产品分类组织检测项目，只列实际能自测或能委外验证的项目。</p>
@@ -2095,27 +2539,57 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§23</p>
+            <p class="section-kicker">§24</p>
             <h2>供应保障</h2>
           </div>
           <p class="lead">客户不只是买样品，更关心通过验证后能不能批量、稳定、按期交付。</p>
         </div>
-        <div class="split reverse">
-          <div class="image-frame" data-animate>
-            <img src="assets/supply/supply-chain-flow.jpg" alt="供应链保障流程图">
-            <div class="image-caption">供应链保障流程素材</div>
-          </div>
-          <div class="supply-grid" data-animate>
-            <article class="card">原料保障</article>
-            <article class="card">产能安排</article>
-            <article class="card">样品响应（7 天打样周期）</article>
-            <article class="card">常规交期</article>
-            <article class="card">包装方式</article>
-            <article class="card">仓储管理</article>
-            <article class="card">物流配合</article>
-            <article class="card">批次追溯</article>
-            <article class="card">急单沟通机制</article>
-          </div>
+        <div class="supply-grid" data-animate>
+          <article class="card">
+            <img src="assets/products/supply-01-raw-material.jpg" alt="原料保障" loading="lazy">
+            <span class="card-label">原料保障</span>
+            <p class="card-desc">PP 聚丙烯粒子入库验收，从源头把控品质</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-02-capacity.jpg" alt="产能安排" loading="lazy">
+            <span class="card-label">产能安排</span>
+            <p class="card-desc">智能排产系统，29 条生产线灵活调度</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-03-sample.jpg" alt="样品响应" loading="lazy">
+            <span class="card-label">样品响应</span>
+            <p class="card-desc">7 天打样周期，快速响应客户需求</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-04-leadtime.jpg" alt="常规交期" loading="lazy">
+            <span class="card-label">常规交期</span>
+            <p class="card-desc">稳定产能保障，按期交付</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-05-packaging.jpg" alt="包装方式" loading="lazy">
+            <span class="card-label">包装方式</span>
+            <p class="card-desc">专业卷材包装，防潮防损</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-06-warehouse.jpg" alt="仓储管理" loading="lazy">
+            <span class="card-label">仓储管理</span>
+            <p class="card-desc">智能化仓库，精准库存管理</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-07-logistics.jpg" alt="物流配合" loading="lazy">
+            <span class="card-label">物流配合</span>
+            <p class="card-desc">17.5 米大板车专线配送</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-08-traceability.jpg" alt="批次追溯" loading="lazy">
+            <span class="card-label">批次追溯</span>
+            <p class="card-desc">全流程条码追溯，质量可追踪</p>
+          </article>
+          <article class="card">
+            <img src="assets/products/supply-09-urgent.jpg" alt="急单沟通机制" loading="lazy">
+            <span class="card-label">急单沟通机制</span>
+            <p class="card-desc">专人对接，急单快速响应通道</p>
+          </article>
         </div>
       </div>
     </section>
@@ -2124,7 +2598,7 @@
       <div class="section-shell">
         <div class="section-header" data-animate>
           <div>
-            <p class="section-kicker">§24</p>
+            <p class="section-kicker">§25</p>
             <h2>合作流程</h2>
           </div>
           <p class="lead">如果客户有现有样品或目标参数，可以按流程快速推进打样和测试。</p>
@@ -2149,11 +2623,11 @@
           <aside class="contact-card" data-animate>
             <h3>联系方式</h3>
             <ul class="contact-list">
-              <li><strong>联系人</strong><span>[待补充] 联系人</span></li>
-              <li><strong>电话</strong><span>[待补充] 电话</span></li>
-              <li><strong>邮箱</strong><span>[待补充] 邮箱</span></li>
-              <li><strong>地址</strong><span>山东省滨州市（详细地址待补充）</span></li>
-              <li><strong>官网</strong><span>cornellnonwoven.com</span></li>
+              <li><strong>联系人</strong><span>栗志</span></li>
+              <li><strong>电话</strong><span>18516826000（微信同号）</span></li>
+              <li><strong>邮箱</strong><span><a href="mailto:zhi.li@chambroad.com" style="color:inherit">zhi.li@chambroad.com</a></span></li>
+              <li><strong>地址</strong><span>山东省滨州市博兴县京博工业园</span></li>
+              <li><strong>官网</strong><span><a href="https://www.cornellnonwoven.com" style="color:inherit" target="_blank" rel="noopener">www.cornellnonwoven.com</a></span></li>
             </ul>
           </aside>
         </div>
@@ -2169,6 +2643,35 @@
     const animated = Array.from(document.querySelectorAll("[data-animate]"));
     const counts = Array.from(document.querySelectorAll(".count"));
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const scrollProgressBar = document.getElementById("scrollProgress");
+    const heroSection = document.querySelector(".hero");
+
+    /* ===== Scroll Progress Bar ===== */
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = progress + "%";
+    };
+
+    /* ===== Hero Parallax Background ===== */
+    const updateHeroParallax = () => {
+      if (!heroSection || reduceMotion) return;
+      const scrolled = window.scrollY;
+      if (scrolled < heroSection.offsetHeight) {
+        heroSection.style.backgroundPositionY = `calc(50% + ${scrolled * 0.35}px)`;
+      }
+    };
+
+    const onScroll = () => {
+      requestAnimationFrame(() => {
+        updateScrollProgress();
+        updateHeroParallax();
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateScrollProgress();
 
     menuToggle.addEventListener("click", () => {
       const isOpen = body.classList.toggle("menu-open");
