@@ -914,7 +914,7 @@
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--brand-blue);
+      color: #fff;
       background: var(--brand-blue-light);
       padding: 0.3rem 0.8rem;
       border-radius: 4px;
@@ -2508,6 +2508,85 @@
         animation: none;
       }
     }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .partner-group {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .partner-group:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(46, 90, 138, 0.28);
+    }
+
+    .partner-group h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .partner-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      padding: 0.75rem 1rem;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .partner-logo:hover {
+      background: var(--brand-blue-50);
+      border-color: var(--brand-blue-light);
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 48px;
+      object-fit: contain;
+      filter: grayscale(0.25);
+      transition: filter var(--transition), transform var(--transition);
+    }
+
+    .partner-logo:hover img {
+      filter: grayscale(0);
+      transform: scale(1.04);
+    }
+
+    .partner-placeholder {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ===== Patent Wall ===== */
     .patent-wall {
       display: grid;
@@ -2740,7 +2819,7 @@
             <h3>医用材料</h3>
             <span class="path-label">认证驱动 → 品牌溢价</span>
             <ul class="path-steps">
-              <li>2026-2027：ISO 13485认证 + 海氏海诺/稳健/振德标杆突破</li>
+              <li>2026-2027：ISO 13485认证 + 头部医用敷料品牌标杆突破</li>
               <li>2027-2028：二类器械注册 + 参与行业标准 + 联合品牌开发</li>
               <li>2028-2030：FDA 510(k) + CE MDR → 打造"Cornell Medical"子品牌</li>
             </ul>
@@ -2752,8 +2831,8 @@
             <h3>卫生材料</h3>
             <span class="path-label">熔喷差异化 → 大客户联合开发</span>
             <ul class="path-steps">
-              <li>卫材透气膜：替代传统PE膜，透气性提升2-3倍 → 金佰利/恒安/可靠</li>
-              <li>厨房湿巾：自带吸油+物理摩擦功能 → 逸祥/昱森/珍爱</li>
+              <li>卫材透气膜：替代传统PE膜，透气性提升2-3倍 → 国际及国内头部卫材品牌</li>
+              <li>厨房湿巾：自带吸油+物理摩擦功能 → 头部湿巾品牌</li>
               <li>运动凉感：降温+抗菌熔喷功能材料 → 新锐品牌</li>
             </ul>
             <div class="path-target">
@@ -3773,6 +3852,44 @@
           <div class="image-frame" data-animate>
             <img src="assets/lab-equipment-1.jpg" alt="康乃尔检测实验室">
             <div class="image-caption">检测实验室</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partners" data-section data-group="quality">
+      <div class="section-shell">
+        <div class="section-header" data-animate>
+          <div>
+            <p class="section-kicker">§25</p>
+            <h2>合作伙伴</h2>
+          </div>
+          <p class="lead">与医疗、卫生、过滤吸附领域的领先企业建立深度合作，以材料能力支撑客户产品创新。</p>
+        </div>
+        <div class="partner-grid" data-animate>
+          <div class="partner-group">
+            <h3>医疗用品行业</h3>
+            <div class="partner-list">
+              <div class="partner-logo">
+                <span class="partner-placeholder">英科医疗</span>
+              </div>
+            </div>
+          </div>
+          <div class="partner-group">
+            <h3>卫生用品行业</h3>
+            <div class="partner-list">
+              <div class="partner-logo">
+                <span class="partner-placeholder">德佑</span>
+              </div>
+            </div>
+          </div>
+          <div class="partner-group">
+            <h3>吸附过滤行业</h3>
+            <div class="partner-list">
+              <div class="partner-logo">
+                <span class="partner-placeholder">南京楚拓</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
