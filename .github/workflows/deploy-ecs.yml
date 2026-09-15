@@ -13,9 +13,12 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      - name: Pull latest code on server & reload nginx
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rsync files to server & reload nginx
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ECS_SSH_KEY }}
           ECS_HOST: ${{ secrets.ECS_HOST }}
@@ -24,6 +27,23 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "$ECS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/deploy_key "$ECS_USER@$ECS_HOST" \
-            "cd /var/www/profile && git pull --ff-only origin main && nginx -s reload && echo DEPLOY_OK"
+          ssh-keyscan -H "$ECS_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+          # rsync 推送（最多重试 3 次，跨境网络偶有抖动）
+          ok=0
+          for i in 1 2 3; do
+            if rsync -avz --delete \
+                 -e "ssh -i ~/.ssh/deploy_key -o ConnectTimeout=20" \
+                 --exclude='.git' --exclude='.github' --exclude='.DS_Store' --exclude='preview' \
+                 index.html en assets CONTENT.md DESIGN.md PROMPT.md preview-hero.png preview-section2.png \
+                 "$ECS_USER@$ECS_HOST:/var/www/profile/"; then
+              ok=1
+              break
+            fi
+            echo "rsync attempt $i failed; retrying in 15s..."
+            sleep 15
+          done
+          if [ "$ok" != "1" ]; then echo "rsync failed after 3 attempts"; exit 1; fi
+
+          # reload nginx
+          ssh -i ~/.ssh/deploy_key -o ConnectTimeout=20 "$ECS_USER@$ECS_HOST" "nginx -s reload && echo DEPLOY_OK"
