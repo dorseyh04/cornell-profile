@@ -2643,85 +2643,6 @@
         animation: none;
       }
     }
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .partner-group {
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .partner-group:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(46, 90, 138, 0.28);
-    }
-
-    .partner-group h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--brand-blue);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .partner-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-
-    .partner-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 80px;
-      padding: 0.75rem 1rem;
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--bg-secondary);
-      transition: background var(--transition), border-color var(--transition);
-    }
-
-    .partner-logo:hover {
-      background: var(--brand-blue-50);
-      border-color: var(--brand-blue-light);
-    }
-
-    .partner-logo img {
-      max-width: 100%;
-      max-height: 48px;
-      object-fit: contain;
-      filter: grayscale(0.25);
-      transition: filter var(--transition), transform var(--transition);
-    }
-
-    .partner-logo:hover img {
-      filter: grayscale(0);
-      transform: scale(1.04);
-    }
-
-    .partner-placeholder {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      text-align: center;
-    }
-
-    @media (max-width: 820px) {
-      .partner-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     /* ===== Patent Wall ===== */
     .patent-wall {
       display: grid;
@@ -4036,43 +3957,6 @@
       </div>
     </section>
 
-    <section class="section" id="partners" data-section data-group="quality">
-      <div class="section-shell">
-        <div class="section-header" data-animate>
-          <div>
-            <p class="section-kicker">§25</p>
-            <h2>Partners</h2>
-          </div>
-          <p class="lead">Deep cooperation with leading companies in medical, hygiene, filtration, and absorption fields, supporting customer product innovation through material capabilities.</p>
-        </div>
-        <div class="partner-grid" data-animate>
-          <div class="partner-group">
-            <h3>Medical Supplies Industry</h3>
-            <div class="partner-list">
-              <div class="partner-logo">
-                <span class="partner-placeholder">Intco Medical</span>
-              </div>
-            </div>
-          </div>
-          <div class="partner-group">
-            <h3>Hygiene Products Industry</h3>
-            <div class="partner-list">
-              <div class="partner-logo">
-                <span class="partner-placeholder">Deyou</span>
-              </div>
-            </div>
-          </div>
-          <div class="partner-group">
-            <h3>Absorption & Filtration Industry</h3>
-            <div class="partner-list">
-              <div class="partner-logo">
-                <span class="partner-placeholder">Nanjing Chutuo</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 
